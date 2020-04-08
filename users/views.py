@@ -1,10 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from users.forms import UserLoginForm
+
 
 # Create your views here.
 
@@ -27,6 +27,7 @@ def loguj(request):
 
     kontekst = {'form': form}
     return render(request, 'users/loguj.html', kontekst)
+
 
 def wyloguj(request):
     logout(request)

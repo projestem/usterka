@@ -1,0 +1,33 @@
+{% extends 'template.html' %}
+{% block tytul %}Zgłoszenia{% endblock tytul %}
+{% block tresc %}
+    <h2>Zgłoszenia</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Miejsce</th>
+            <th scope="col">Opis</th>
+            <th scope="col">Imie</th>
+            <th scope="col">Nazwisko</th>
+            <th scope="col">Usuń</th>
+        </tr>
+        </thead>
+    <tbody>
+        {% for zgloszenie in object_list %}
+            <tr>
+                <td>{{ zgloszenie.data }}</td>
+                <td>{{ zgloszenie.miejsce }}</td>
+                <td>{{ zgloszenie.opis }}</td>
+                <td>{{ zgloszenie.imie }}</td>
+                <td>{{ zgloszenie.nazwisko }}</td>
+                <td>
+                    <a href="{% url 'zgloszenia:usun' zgloszenie.pk%}">
+                        <button class="btn btn-danger">Usuń</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock tresc %}

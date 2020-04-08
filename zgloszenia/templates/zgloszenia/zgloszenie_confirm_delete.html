@@ -1,0 +1,9 @@
+{% extends 'template.html' %}
+{% block tytul %}Zgłoś usterkę{% endblock tytul %}
+{% block tresc%}
+    <form method="post">
+        {% csrf_token%}
+        <p>Czy na pewno chcesz usunąć? {{ object.opis }}</p>
+        <button class="btn btn-danger">Usuń</button>
+    </form>
+{% endblock tresc %}
