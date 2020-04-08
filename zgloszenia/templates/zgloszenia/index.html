@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+{% block title %} Usterka{% endblock title %}
+{% block content %}
+    <h1>Witaj na stronie do zgłaszania usterek!</h1>
+
+    <div class="alert alert-primary" role="alert">
+        Aby zgłosić usterkę kliknij przycisk poniżej
+    </div>
+
+    <a href="{% url 'zgloszenia:dodaj' %}">
+        <button class="btn btn-primary">Zgłoś usterkę</button>
+    </a>
+
+    <h3>Aktualne informacje:......</h3>
+{% endblock content %}

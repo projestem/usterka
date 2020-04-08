@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+{% block title %}Zgłoś usterkę{% endblock title %}
+{% block content %}
+    <h2>Zgłoś usterkę:</h2>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+{% endblock content %}
